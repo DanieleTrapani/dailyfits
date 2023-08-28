@@ -1,5 +1,4 @@
 class Outfit < ApplicationRecord
-
   belongs_to :tag
   has_many_attached :photos
   
