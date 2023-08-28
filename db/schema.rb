@@ -10,9 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_28_134750) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_28_143131) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "outfits", force: :cascade do |t|
+    t.text "description"
+    t.bigint "users_id"
+    t.bigint "tags_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["tags_id"], name: "index_outfits_on_tags_id"
+    t.index ["users_id"], name: "index_outfits_on_users_id"
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string "temperature"
+    t.string "rain"
+    t.string "wind"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -22,6 +40,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_28_134750) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "first_name"
+    t.string "last_name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
