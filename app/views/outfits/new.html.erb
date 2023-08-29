@@ -1,1 +1,6 @@
-
+<%= simple_form_for @outfit do |f| %>
+  <%# <input class="form-control file optional" type="file" name="outfit[photo]" id="outfit_photo" accept="image/*"> %>
+  <%= f.input :photos, as: :file, input_html: {multiple: true} %>
+  <%= f.input :description %>
+  <%= f.submit %>
+<% end %>
