@@ -6,5 +6,4 @@ class Outfit < ApplicationRecord
     maximum: 200,
     too_long: "Maximum description length is 200 characters."
   }
-  
 end
