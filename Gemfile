@@ -81,3 +81,5 @@ end
 gem "cloudinary"
 
 gem "httparty"
+
+gem "geocoder"
