@@ -1,23 +1,23 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-bottom">
   <div class="container-fluid">
     <%= link_to weather_today_path do %>
-      <i class="fa-solid fa-house fa-2xl"></i>
+      <i class="fa-solid fa-house fa-xl"></i>
     <% end %>
     <%= link_to weather_forecast_path do %>
-      <i class="fa-solid fa-sun fa-2xl"></i>
+      <i class="fa-solid fa-cloud fa-xl"></i>
     <% end %>
     <label for="camera">
-      <span class="btn">
-        <i class="fa-solid fa-plus fa-2xl"></i>
+      <span class="camera-btn btn">
+        <i class="fa-solid fa-camera fa-2xl"></i>
         <input id="camera" class="d-none" type="file" accept="image/*" capture="environment">
       </span>
     </label>
     <%= link_to outfits_path do %>
-      <i class="fa-solid fa-shirt fa-2xl"></i>
+      <i class="fa-solid fa-shirt fa-xl"></i>
     <% end %>
     <%# TODO: this below needs to go the setting, not yet implemented %>
-    <%= link_to weather_today_path do %>
-      <i class="fa-solid fa-user fa-2xl"></i>
+    <%= link_to dashboard_path do %>
+      <i class="fa-solid fa-user fa-xl"></i>
     <% end %>
   </div>
 </div>

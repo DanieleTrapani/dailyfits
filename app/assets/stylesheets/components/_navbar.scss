@@ -1,9 +1,24 @@
 .navbar-lewagon {
-  justify-content: space-between;
+  justify-content: space-around;
   background: white;
   height: 60px;
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
+}
+
+.container-fluid a {
+  color: black;
+}
+
+.camera-btn {
+  background-color: black;
+  border-radius: 50%;
+  color: white;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
