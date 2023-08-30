@@ -61,9 +61,17 @@ class WeatherApi
     }
   end
 
-  def self.generate_tag(hash, value)
+  def self.get_tag(hash, value)
     hash.values.any? do |range|
       return hash.key(range) if range.include?(value)
     end
+  end
+
+  def create_tag()
+    temp_label = Weather.Api.get_tag(WeatherApi.temp_ranges, )
+    wind_label = WeatherApi.get_tag(WeatherApi.wind_ranges, )
+    precip_label = WeatherApi.get_tag(WeatherApi.precip_ranges, )
+
+    Tag.new(temperature: temp_label, wind: wind_label, rain: precip_label)
   end
 end
