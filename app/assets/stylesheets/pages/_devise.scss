@@ -2,3 +2,11 @@
   text-decoration: none;
   color: rgb(189, 189, 189);
 }
+
+.devise input {
+  box-shadow: none !important;
+  caret-color: white;
+  &:active {
+    outline-style: none;
+  }
+}

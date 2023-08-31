@@ -9,20 +9,21 @@
       <%= f.input :first_name,
                 required: true,
                 autofocus: true,
-                input_html: { autocomplete: "first-name" } %>
+                input_html: { autocomplete: "first-name", class: 'bg-transparent border-0 border-bottom',
+ } %>
       <%= f.input :last_name,
                 required: true,
-                input_html: { autocomplete: "last-name" } %>
+                input_html: { autocomplete: "last-name", class: 'bg-transparent border-0 border-bottom', } %>
       <%= f.input :email,
                 required: true,
-                input_html: { autocomplete: "email" }%>
+                input_html: { autocomplete: "email", class: 'bg-transparent border-0 border-bottom', }%>
       <%= f.input :password,
                 required: true,
                 # hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
+                input_html: { autocomplete: "new-password", class: 'bg-transparent border-0 border-bottom', } %>
       <%= f.input :password_confirmation,
                 required: true,
-                input_html: { autocomplete: "new-password" } %>
+                input_html: { autocomplete: "new-password", class: 'bg-transparent border-0 border-bottom', } %>
     </div>
     <div class="form-actions">
       <%= f.button :submit, "Sign up", class: 'btn light sm-font' %>
