@@ -1,25 +1,27 @@
 <%#= render header ???? %>
-
-<div class="container" style="padding-left: 0px; padding-right: 0px; padding-top: 20px">
-  <div id="outfitCarousel" class="carousel slide w-100 h-100" data-ride="carousel">
-    <div class="carousel-inner">
-      <% @outfit.photos.each_with_index do |photo, index| %>
-        <div class="carousel-item <%= "active" if index == 0 %> " >
-        <%= cl_image_tag photo.key, width: 400, height: 560, crop: :fill %>
-        </div>
-      <% end %>
+<div class="bg-image">
+  <div class="container" style="padding-left: 0px; padding-right: 0px; padding-top: 60px">
+    <div id="outfitCarousel" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <% @outfit.photos.each_with_index do |photo, index| %>
+          <div class="carousel-item <%= "active" if index == 0 %> " >
+          <%= cl_image_tag photo.key, width: 400, height: 400, crop: :fill %>
+          </div>
+        <% end %>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#outfitCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#outfitCarousel" data-bs-slide="prev">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#outfitCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#outfitCarousel" data-bs-slide="prev">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-  </div>
-  <div id="details">
-    <p> <%= @outfit.description %> </p>
+    
+    <div id="details" style="height:250px">
+      <p> <%= @outfit.description %> </p>
+    </div>
   </div>
 </div>
 
