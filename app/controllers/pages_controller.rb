@@ -4,9 +4,6 @@ class PagesController < ApplicationController
   def home
   end
 
-  def today
-  end
-
   def forecast
   end
 
