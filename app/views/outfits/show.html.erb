@@ -1,11 +1,11 @@
 <%#= render header ???? %>
 <div class="bg-image">
   <div class="container" style="padding-left: 0px; padding-right: 0px; padding-top: 60px">
-    <div id="outfitCarousel" class="carousel slide" data-ride="carousel">
+    <div id="outfitCarousel" class="carousel slide bg-white" data-ride="carousel">
       <div class="carousel-inner">
         <% @outfit.photos.each_with_index do |photo, index| %>
-          <div class="carousel-item <%= "active" if index == 0 %> " >
-            <%= cl_image_tag photo.key, width: 400, height: 400, crop: :fill %>
+          <div class="carousel-item <%= "active" if index == 0 %> square-container"
+            style="background-image: url('<%= cl_image_path photo.key %>');">
           </div>
         <% end %>
       </div>
