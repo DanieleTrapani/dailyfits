@@ -1,9 +1,11 @@
-<div class="container">
-  <div id="outfitCarousel" class="carousel slide" data-ride="carousel" width="400" height="300">
+<%#= render header ???? %>
+
+<div class="container" style="padding-left: 0px; padding-right: 0px; padding-top: 20px">
+  <div id="outfitCarousel" class="carousel slide w-100 h-100" data-ride="carousel">
     <div class="carousel-inner">
       <% @outfit.photos.each_with_index do |photo, index| %>
         <div class="carousel-item <%= "active" if index == 0 %> " >
-        <%= cl_image_tag photo.key, width: 400, height: 300, crop: :fill %>
+        <%= cl_image_tag photo.key, width: 400, height: 560, crop: :fill %>
         </div>
       <% end %>
     </div>
@@ -20,3 +22,5 @@
     <p> <%= @outfit.description %> </p>
   </div>
 </div>
+
+<%= render "shared/navbar" %>
