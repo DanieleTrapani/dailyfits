@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-bottom">
   <div class="container-fluid">
-    <%= link_to weather_today_path do %>
+    <%= link_to root_path do %>
       <i class="fa-solid fa-house fa-xl"></i>
     <% end %>
     <%= link_to weather_forecast_path do %>
@@ -9,7 +9,7 @@
     <%= link_to new_outfit_path do %>
       <label for="camera" data-controller="upload-image">
         <span class="camera-btn btn">
-          <i class="fa-solid fa-camera fa-2xl"></i>
+          <i class="fa-solid fa-plus fa-2xl"></i>
         </span>
       <% end %>
     </label>

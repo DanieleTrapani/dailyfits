@@ -19,11 +19,29 @@ puts "Creating new outfits"
 file1 = URI.open('https://images.unsplash.com/photo-1576185055363-6d7c88000919?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2787&q=80')
 outfit1 = Outfit.new(description: "test", user: user)
 outfit1.photos.attach(filename: 'cold.png', io: file1, content_type: 'image/*')
+today = WeatherApi.get_day(0, 'Amsterdam')
+tag_params = WeatherApi.create_tag(today)
+tag = Tag.new(tag_params)
+if tag.valid?
+  tag.save
+else
+  tag = Tag.where(tag_params).first
+end
+tag.outfits << outfit1
 outfit1.save!
 
 file2 = URI.open('https://images.unsplash.com/photo-1521045452978-3753d26aaee4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2787&q=80')
 outfit2 = Outfit.new(description: "test", user: user)
 outfit2.photos.attach(filename: 'cold.png', io: file2, content_type: 'image/*')
+today = WeatherApi.get_day(0, 'Amsterdam')
+tag_params = WeatherApi.create_tag(today)
+tag = Tag.new(tag_params)
+if tag.valid?
+  tag.save
+else
+  tag = Tag.where(tag_params).first
+end
+tag.outfits << outfit2
 outfit2.save!
 
 puts "Done!"
