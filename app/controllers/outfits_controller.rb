@@ -17,6 +17,17 @@ class OutfitsController < ApplicationController
     @outfit = Outfit.new(outfit_params)
     @outfit.user = current_user
 
+    # TODO: generate tag, if existing append outfit, if not create and append
+
+    today = WeatherApi.get_day(0, 'Amsterdam')
+    tag_params = WeatherApi.create_tag(today)
+    tag = Tag.new(tag_params)
+    if tag.valid?
+      tag.save
+    else
+      tag = Tag.where(tag_params).first
+    end
+    tag.outfits << @outfit
     if @outfit.save
       redirect_to outfit_path(@outfit)
     else

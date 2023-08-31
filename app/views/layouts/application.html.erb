@@ -9,7 +9,10 @@
     <%= javascript_importmap_tags %>
   </head>
   <body>
-    <%= render "shared/flashes" %>
-    <%= yield %>
+    <main class="bg-image">
+      <%= render "shared/flashes" %>
+      <%= yield %>
+    </main>
+    <%= render "shared/navbar" unless @disable_nav %>
   </body>
 </html>
