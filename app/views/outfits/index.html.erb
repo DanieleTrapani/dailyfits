@@ -1,5 +1,15 @@
 <div class="container-fluid bg-image">
-  <h1>Hello,Nancy</h1>
+  <div class="pt-5 d-flex justify-content-between">
+    <div class="d-flex justify-content-around mx-4">
+      <i class="pe-2 pt-0 fa-solid fa-lg fa-location-dot" style="color: #ffffff;"></i>
+      <p class="mb-2"><%= @weather[:location].titleize %></p>
+    </div>
+    <div class="d-flex justify-content-around mx-4">
+      <i class="pe-5 fa-solid fa-lg fa-calendar" style="color: #ffffff;"></i>
+      <i class="fa-solid fa-lg fa-magnifying-glass" style="color: #ffffff;"></i>
+    </div>
+  </div>
+  <%# waiting for more outfits, for now repeating the existing two images %>
   <div class="d-flex justify-content-around ps-3 pe-3">
     <div class="d-flex flex-column">
       <% @outfits.each do |outfit| %>
@@ -13,16 +23,38 @@
           </div>
         <% end %>
       <% end %>
-    </div>
-    <div class="d-flex flex-column">
-      <% @outfits.each_with_index do |outfit,i| %>
-        <% if outfit == @outfits.last %>
+      <% @outfits.each do |outfit| %>
+        <% if outfit == @outfits.first %>
           <div class="pb-3">
-            <%= cl_image_tag outfit.photos.first.key, crop: :fill, class: "card image1" %>
+            <%= cl_image_tag outfit.photos.first.key, crop: :fill, class: "card image2" %>
           </div>
         <% else %>
           <div class="pb-3">
             <%= cl_image_tag outfit.photos.first.key, crop: :fill, class: "card image2" %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="d-flex flex-column">
+      <% @outfits.each do |outfit| %>
+        <% if outfit == @outfits.last %>
+          <div class="pb-3">
+            <%= cl_image_tag outfit.photos.first.key, crop: :fill, class: "card image2" %>
+          </div>
+        <% else %>
+          <div class="pb-3">
+            <%= cl_image_tag outfit.photos.first.key, crop: :fill, class: "card image2" %>
+          </div>
+        <% end %>
+      <% end %>
+      <% @outfits.each do |outfit| %>
+        <% if outfit == @outfits.first %>
+          <div class="pb-3">
+            <%= cl_image_tag outfit.photos.first.key, crop: :fill, class: "card image2" %>
+          </div>
+        <% else %>
+          <div class="pb-3">
+            <%= cl_image_tag outfit.photos.first.key, crop: :fill, class: "card image1" %>
           </div>
         <% end %>
       <% end %>

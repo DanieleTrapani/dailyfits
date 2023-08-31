@@ -12,7 +12,8 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(_resource)
-    weather_today_path
+    # weather_today_path
+    root_path
   end
 
   def disable_nav
