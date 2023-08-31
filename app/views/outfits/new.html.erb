@@ -1,4 +1,4 @@
-<%= simple_form_for @outfit do |f| %>
+  <%= simple_form_for @outfit do |f| %>
   <%= f.input :photos, as: :file, input_html: {multiple: true} %>
   <%= f.input :description, placeholder: "Write a caption...", label: false %>
   <%= f.submit "Upload", class: 'btn light text-white' %>
