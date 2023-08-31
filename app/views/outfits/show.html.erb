@@ -18,8 +18,14 @@
         <span class="visually-hidden">Previous</span>
       </button>
     </div>
-    
-    <div id="details" style="height:250px">
+
+    <div id="tag-display"  class="bg-light" style="height: 45px; padding-top: 5px">
+      <%#= Iterate over outfit tags %>
+        <h4 class="btn btn-secondary rounded-5">Tag</h4>
+      <%# end %>
+    </div>
+
+    <div id="details">
       <p> <%= @outfit.description %> </p>
     </div>
   </div>
