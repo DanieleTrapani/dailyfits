@@ -1,0 +1,14 @@
+.light {
+  font-family: Comfortaa;
+  font-size: 18px;
+  background-color: transparent;
+  color: white;
+  border-color: white;
+  border-radius:  10px;
+}
+
+.light:hover {
+  // border-radius:  0px;
+  transition: 0.7s;
+  cursor: pointer;
+}
