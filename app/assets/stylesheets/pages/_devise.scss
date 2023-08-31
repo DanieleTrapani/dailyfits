@@ -6,7 +6,15 @@
 .devise input {
   box-shadow: none !important;
   caret-color: white;
+  color: white;
   &:active {
     outline-style: none;
   }
+  &:focus {
+    color: white;
+  }
+}
+
+.devise label {
+  color: rgb(170, 170, 170);
 }
