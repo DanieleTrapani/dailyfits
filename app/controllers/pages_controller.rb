@@ -5,9 +5,6 @@ class PagesController < ApplicationController
     @disable_nav = true
   end
 
-  def today
-  end
-
   def forecast
   end
 
