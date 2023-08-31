@@ -1,7 +1,7 @@
 class Outfit < ApplicationRecord
   attr_accessor :day
 
-  #   belongs_to :tag
+  belongs_to :tag
   belongs_to :user
   has_many_attached :photos
 
