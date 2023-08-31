@@ -46,27 +46,43 @@ class WeatherForecast
   }
   def initialize(location)
     @location = location
-    @forecast = WeatherApi.api_call(location)
-  end
-
-  def daily_forecast
-    f = []
-    @forecast.size.times do |i|
-      f << {
-        date: Date.parse(@forecast[:time][i]),
-        weathercode: @forecast[:weathercode][i],
-        rainfall: WeatherApi.generate_tag(WeatherApi.precip_ranges, @forecast[:precipitation][i]),
-        wind: WeatherApi.generate_tag(WeatherApi.wind_ranges, @forecast[:windspeed][i]),
-        temp: WeatherApi.generate_tag(WeatherApi.temp_ranges, @forecast[:mean_temp][i]),
-        icon: WEATHER_CODES[@forecast[:weathercode][i]][:icon],
-        description: WEATHER_CODES[@forecast[:weathercode][i]][:description],
-        location: @location
-      }
-    end
-    f.sort_by { |hash| hash[:date] }
+    @api = WeatherApi.api_call(location)
   end
 
   def today
-    daily_forecast.first
+    {
+      date: Date.parse(@api["time"][0]),
+      weathercode: @api["weathercode"][0],
+      rainfall: rainfall(@api["precipitation_sum"][0]),
+      wind: wind(@api["windspeed_10m_max"][0]),
+      temp: temp(@api["apparent_temperature_min"][0], @api["apparent_temperature_max"][0]),
+      icon: WEATHER_CODES[@api["weathercode"][0]][:icon],
+      description: WEATHER_CODES[@api["weathercode"][0]][:description],
+      location: @location
+    }
+  end
+
+  private
+
+  def rainfall(value)
+    tags = WeatherApi.tag_names[:rain]
+    tags.values.any? do |range|
+      return tags.key(range) if range.include?(value)
+    end
+  end
+
+  def temp(min, max)
+    tags = WeatherApi.tag_names[:temp]
+    mean_temp = ((max + min) / 2.0).round(1)
+    tags.values.any? do |range|
+      return tags.key(range) if range.include?(mean_temp)
+    end
+  end
+
+  def wind(value)
+    tags = WeatherApi.tag_names[:wind]
+    tags.values.any? do |range|
+      return tags.key(range) if range.include?(value)
+    end
   end
 end
