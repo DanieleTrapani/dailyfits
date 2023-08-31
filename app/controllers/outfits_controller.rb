@@ -19,16 +19,16 @@ class OutfitsController < ApplicationController
 
     # TODO: generate tag, if existing append outfit, if not create and append
 
+    today = WeatherApi.get_day(0, 'Amsterdam')
+    tag_params = WeatherApi.create_tag(today)
+    tag = Tag.new(tag_params)
+    if tag.valid?
+      tag.save
+    else
+      tag = Tag.where(tag_params).first
+    end
+    tag.outfits << @outfit
     if @outfit.save
-      today = WeatherApi.get_day(0, 'Amsterdam')
-      tag_params = WeatherApi.create_tag(today)
-      tag = Tag.new(tag_params)
-      if tag.valid?
-        tag.save
-      else
-        tag = Tag.where(tag_params)
-      end
-      tag.outfits << @outfit
       redirect_to outfit_path(@outfit)
     else
       render :new, status: :unprocessable_entity
