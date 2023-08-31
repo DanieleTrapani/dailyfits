@@ -10,3 +10,36 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+body {
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1591530201596-c5076b7c60ce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3087&q=80');
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(3px)
+}
+
+h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-family:Comfortaa;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+h2 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-family:Comfortaa;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+p {
+  font-size: 20px;
+  color: white;
+  font-family:Comfortaa;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
