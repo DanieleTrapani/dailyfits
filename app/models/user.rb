@@ -7,6 +7,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   def location
-    "san francisco"
+    "Amsterdam"
   end
 end
