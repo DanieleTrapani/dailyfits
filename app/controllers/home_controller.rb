@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    @weather = WeatherForecast.new(current_user.location).today
+    @weather = WeatherApi.get_day(0, current_user.location)
   end
 end
