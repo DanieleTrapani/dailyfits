@@ -1,7 +1,7 @@
 class OutfitsController < ApplicationController
   def index
     @outfits = Outfit.all
-    @weather = WeatherForecast.new(current_user.location).today
+    @weather = WeatherApi.get_day(0, current_user.location)
     # TODO: Filter by weather condition where they match the outfit tags
   end
 

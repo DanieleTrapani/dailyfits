@@ -2,14 +2,14 @@
   <div class="pt-5 d-flex justify-content-between">
     <div class="d-flex justify-content-around mx-4">
       <i class="pe-2 pt-0 fa-solid fa-lg fa-location-dot" style="color: #ffffff;"></i>
-      <p class="mb-2"><%= @weather[:location].titleize %></p>
+      <p class="mb-2"><%= current_user.location %></p>
     </div>
     <div class="d-flex justify-content-around mx-4">
       <i class="pe-5 fa-solid fa-lg fa-calendar" style="color: #ffffff;"></i>
       <i class="fa-solid fa-lg fa-magnifying-glass" style="color: #ffffff;"></i>
     </div>
   </div>
-    <div class="d-flex justify-content-around ps-3 pe-3">
+  <div class="d-flex justify-content-around ps-3 pe-3">
     <div class="d-flex flex-column">
       <% @outfits.first(@outfits.count/2).each do |outfit| %>
         <% if outfit == @outfits.first(@outfits.count/2).first %>
