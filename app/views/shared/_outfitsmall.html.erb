@@ -1,6 +1,5 @@
-
-<%= link_to outfit_path(outfit), class:"text-decoration-none" do %>
+<%= link_to outfit_path(outfit.id), class:"text-decoration-none" do %>
   <div class="pb-3">
-    <%= cl_image_tag outfit.photos.first.key, crop: :fill, class: "card image1" %>
+    <%= cl_image_tag outfit.photos.first.key , class: "card image1" %>
   </div>
 <% end %>

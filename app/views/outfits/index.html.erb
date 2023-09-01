@@ -13,35 +13,18 @@
     <div class="d-flex flex-column">
       <% @outfits.first(@outfits.count/2).each do |outfit| %>
         <% if outfit == @outfits.first(@outfits.count/2).first %>
-          <%#= render partial: 'shared/outfitsmall', object: outfit %>
-          <%= link_to outfit_path(outfit), class:"text-decoration-none" do %>
-            <div class="pb-3">
-              <%= cl_image_tag outfit.photos.first.key, crop: :fill, class: "card image1" %>
-            </div>
-          <% end %>
+          <%= render partial: 'shared/outfitsmall', locals: { outfit: outfit } %>
         <% else %>
-          <%= link_to outfit_path(outfit), class:"text-decoration-none" do %>
-            <div class="pb-3">
-              <%= cl_image_tag outfit.photos.first.key, crop: :fill, class: "card image2" %>
-            </div>
-          <% end %>
+          <%= render partial: 'shared/outfitlarge', locals: { outfit: outfit } %>
         <% end %>
       <% end %>
     </div>
     <div class="d-flex flex-column">
       <% @outfits.last(@outfits.count-@outfits.count/2).each do |outfit| %>
         <% if outfit == @outfits.last(@outfits.count-@outfits.count/2).last %>
-          <%= link_to outfit_path(outfit), class:"text-decoration-none" do %>
-            <div class="pb-3">
-              <%= cl_image_tag outfit.photos.first.key, crop: :fill, class: "card image2" %>
-            </div>
-          <% end %>
+          <%= render partial: 'shared/outfitsmall', locals: { outfit: outfit } %>
         <% else %>
-          <%= link_to outfit_path(outfit), class:"text-decoration-none" do %>
-            <div class="pb-3">
-              <%= cl_image_tag outfit.photos.first.key, crop: :fill, class: "card image2" %>
-            </div>
-          <% end %>
+          <%= render partial: 'shared/outfitlarge', locals: { outfit: outfit } %>
         <% end %>
       <% end %>
     </div>
