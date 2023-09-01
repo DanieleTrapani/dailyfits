@@ -1,10 +1,6 @@
 class OutfitsController < ApplicationController
   def index
     @outfits = Outfit.all
-    count = Outfit.count
-    first = count / 2
-    @outfits_first_half = Outfit.first(first)
-    @outfits_last_half = Outfit.last(count - first)
     @weather = WeatherForecast.new(current_user.location).today
     # TODO: Filter by weather condition where they match the outfit tags
   end
