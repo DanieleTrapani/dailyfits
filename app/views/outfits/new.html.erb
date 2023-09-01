@@ -1,5 +1,11 @@
+<div class="container py-3">
+  <h2 class="mb-3">Create a new Outfit</h2>
   <%= simple_form_for @outfit do |f| %>
-  <%= f.input :photos, as: :file, input_html: {multiple: true} %>
-  <%= f.input :description, placeholder: "Write a caption...", label: false %>
-  <%= f.submit "Upload", class: 'btn light text-white' %>
-<% end %>
+    <%= f.input :photos,
+            as: :file,
+            input_html: {multiple: true, class: 'mb-3'} %>
+    <%= f.input :description,
+            input_html: {class: 'bg-transparent border-0 border-bottom'} %>
+    <%= f.submit "Upload", class: 'btn light text-white mt-3' %>
+  <% end %>
+</div>
