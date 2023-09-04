@@ -27,7 +27,7 @@ class WeatherApi
     @@tag_names
   end
 
-  def self.api_call(_location)
+  def self.api_call(location)
     # Retrieves coordinates from location
     coordinates = Geocoder.search(location).first.coordinates
 
