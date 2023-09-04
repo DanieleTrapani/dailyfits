@@ -29,8 +29,7 @@ class WeatherApi
 
   def self.api_call(_location)
     # Retrieves coordinates from location
-    # coordinates = Geocoder.search(location).first.coordinates
-    coordinates = [50, 5]
+    coordinates = Geocoder.search(location).first.coordinates
 
     # Retrieves daily weather data from coordinates
     response = HTTParty.get("https://api.open-meteo.com/v1/forecast?latitude=#{coordinates[0]}&longitude=#{coordinates[1]}&daily=weathercode,apparent_temperature_max,apparent_temperature_min,precipitation_sum,windspeed_10m_max&timezone=Europe%2FBerlin")
