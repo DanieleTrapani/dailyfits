@@ -3,7 +3,7 @@
     <h5 class="position-relative mb-4"><i class="position-absolute -start-3 fa-solid fa-location-dot mx-3"></i><%= current_user.location.titleize %></h5>
     <i class="wi <%= weather_icon(@forecast[:weathercode][1]) %> fs-1 border border-4 border-white rounded-circle p-4 m-4"></i>
     <p><%= @forecast[:days][1].to_date.strftime("%A") %>'s Forecast</p>
-    <h2><%= weather_description(@forecast[:weathercode][1]) %>, <%= @forecast[:temp][1].round %>°c</h2>
+    <h2><%= weather_description(@forecast[:weathercode][1]) %>, <%= @forecast[:temp][1].round %> °C</h2>
     <div class="mt-5 fs-4">
       <% (2..6).each do |i| %>
         <div class="row py-1">
@@ -14,7 +14,7 @@
             <i class="wi <%= weather_icon(@forecast[:weathercode][i]) %> fs-1"></i>
           </div>
           <div class="col">
-            <%= @forecast[:temp][i].round %>°c
+            <%= @forecast[:temp][i].round %>°C
           </div>
         </div>
       <% end %>
