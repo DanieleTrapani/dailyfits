@@ -6,7 +6,7 @@
     <%#= Simple form %>
     <%= form_tag("/", :method => "get") do %>
       <%= text_field_tag(:location) %>
-      <%= submit_tag("Search location") %>
+      <%= submit_tag("Search") %>
     <% end %>
 
     <i class="wi <%= weather_icon(@weather[:weathercode]) %> fs-1 border border-4 border-white rounded-circle p-4 m-4"></i>
