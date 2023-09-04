@@ -1,8 +1,16 @@
 class OutfitsController < ApplicationController
   def index
-    @outfits = Outfit.all
+    today = WeatherApi.get_day(0, 'Amsterdam')
+    tag_params = WeatherApi.create_tag(today)
+    tag = Tag.new(tag_params)
+    if tag.valid?
+      tag.save
+    else
+      tag = Tag.where(tag_params).first
+    end
+
+    @outfits = Outfit.where(tag_id: tag.id).order(created_at: :desc)
     @weather = WeatherApi.get_day(0, current_user.location)
-    # TODO: Filter by weather condition where they match the outfit tags
   end
 
   def show

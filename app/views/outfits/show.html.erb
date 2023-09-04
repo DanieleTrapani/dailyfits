@@ -1,6 +1,9 @@
 <%#= render header ???? %>
 <div class="bg-image">
-  <div class="container" style="padding-left: 0px; padding-right: 0px; padding-top: 60px">
+  <div class="container outfitShow" style="padding-left: 0px; padding-right: 0px; padding-top: 60px">
+    <%= link_to :back do %>
+      <i class="fa-solid fa-xl fa-chevron-left"></i>
+    <% end %>
     <div id="outfitCarousel" class="carousel slide bg-white" data-ride="carousel">
       <div class="carousel-inner">
         <% @outfit.photos.each_with_index do |photo, index| %>
