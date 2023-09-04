@@ -11,5 +11,6 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+    @outfits = current_user.outfits
   end
 end
