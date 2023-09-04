@@ -4,7 +4,7 @@
     </i><%= @location.titleize %></h1>
 
     <%#= Simple form %>
-    <%= form_tag("/", :method => "get") do %>
+    <%= form_tag("/", method: "get", class: 'bg-transparent border-0 border-bottom text-white') do %>
       <%= text_field_tag(:location) %>
       <%= submit_tag("Search") %>
     <% end %>
@@ -13,11 +13,11 @@
     <h2><%= weather_description(@weather[:weathercode]) %></h2>
     <dl class="mt-5 fs-4">
       <dt>Wind</dt>
-      <dd><%= @weather[:windspeed] %>km/h</dd>
-      <dt>Temperature</dt>
-      <dd><%= @weather[:temp] %>°c</dd>
+      <dd><%= @weather[:windspeed].round %>km/h</dd>
+      <dt>Avg. Temperature</dt>
+      <dd><%= @weather[:temp].round %>°c</dd>
       <dt>Rainfall</dt>
-      <dd><%= @weather[:precipitation] %>mm</dd>
+      <dd><%= @weather[:precipitation].round %>mm</dd>
     </dl>
   </div>
 </div>
