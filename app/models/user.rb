@@ -6,7 +6,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  def location
-    "Amsterdam"
-  end
+  # def location
+  #   "Amsterdam"
+  # end
 end
