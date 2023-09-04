@@ -6,6 +6,8 @@ class PagesController < ApplicationController
   end
 
   def forecast
+    @location = current_user.location
+    @forecast = WeatherApi.forecast(@location)
   end
 
   def dashboard
