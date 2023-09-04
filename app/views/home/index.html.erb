@@ -1,7 +1,7 @@
 <div class="container bg-image d-flex pt-4 text-white">
   <div class="mx-auto d-flex flex-column align-items-center text-center">
     <h1 class="position-relative mb-4"><i class="position-absolute -start-4 fa-solid fa-location-dot mx-3">
-    </i><%= current_user.location.titleize %></h1>
+    </i><%= @location.titleize %></h1>
 
     <%#= Simple form %>
     <%= form_tag("/", :method => "get") do %>
