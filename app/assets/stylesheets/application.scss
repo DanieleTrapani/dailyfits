@@ -25,7 +25,8 @@ html {
   padding: 0;
   margin: 0;
   background-repeat: no-repeat;
-  min-height: 100vh;
+  height: 100vh;
+  padding-bottom: 60px;
 }
 
 h1 {
@@ -68,7 +69,7 @@ p {
   left: -2.5rem;
 }
 
-.sm-font{
+.sm-font {
   font-size: 13px;
 }
 
