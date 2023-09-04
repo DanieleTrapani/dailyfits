@@ -45,17 +45,18 @@ class OutfitsController < ApplicationController
   end
 
   def edit
-    id = params[:id]
-    @outfit = Outfit.find(id)
+    @outfit = Outfit.find(params[:id])
   end
 
   def update
-    @outfit = Outfit.new
+    @outfit = Outfit.find(params[:id])
+    @outfit.update(outfit_params)
+    redirect_to dashboard_path, status: :see_other
   end
 
   def destroy
-    id = params[:id]
-    Outfit.destroy(id)
+    @outfit = Outfit.find(params[:id])
+    @outfit.destroy
     redirect_to outfits_path, status: :see_other
   end
 

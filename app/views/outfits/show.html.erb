@@ -1,9 +1,22 @@
 <%#= render header ???? %>
 <div class="bg-image">
   <div class="container outfitShow" style="padding-left: 0px; padding-right: 0px; padding-top: 60px">
-    <%= link_to :back do %>
-      <i class="fa-solid fa-xl fa-chevron-left"></i>
-    <% end %>
+    <div class="d-flex justify-content-between">
+      <div class="ps-2">
+        <%= link_to :back do %>
+          <i class="fa-solid fa-xl fa-chevron-left" style="color: #ffffff;"></i>
+        <% end %>
+      </div>
+      <div class="pe-4">
+        <i class="fas fa-ellipsis-h fa-xl pe-4" style="color: #ffffff;"></i>
+      </div>
+      <form id="selection-form" class="d-flex flex-column">
+        <%= link_to "edit", edit_outfit_path, class:"btn light text-white sm-font" %>
+        <%= link_to "delete", :back, class:"btn light text-white sm-font", data: {turbo_method: :delete} %>
+      </form>
+    </div>
+
+
     <div id="outfitCarousel" class="carousel slide bg-white" data-ride="carousel">
       <div class="carousel-inner">
         <% @outfit.photos.each_with_index do |photo, index| %>
@@ -22,9 +35,9 @@
       </button>
     </div>
     <div id="tag-display"  class="d-flex justify-content-between" style="padding-left: 10px; padding-right: 10px; padding-top: 5px">
-      <h4 class="btn border light align-text-center sm-font"><%= @outfit.tag.temperature %></h4>
-      <h4 class="btn border light align-text-center sm-font"><%= @outfit.tag.wind %> wind</h4>
-      <h4 class="btn border light align-text-center sm-font"><%= @outfit.tag.rain %> rain</h4>
+      <h4 class="btn border light text-white align-text-center sm-font"><%= @outfit.tag.temperature %></h4>
+      <h4 class="btn border light text-white align-text-center sm-font"><%= @outfit.tag.wind %> wind</h4>
+      <h4 class="btn border light text-white align-text-center sm-font"><%= @outfit.tag.rain %> rain</h4>
     </div>
     <div id="details" class="text-justify" style="padding-left: 20px">
       <p> <%= @outfit.description %> </p>
