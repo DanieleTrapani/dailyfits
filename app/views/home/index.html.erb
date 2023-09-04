@@ -1,15 +1,24 @@
 <div class="container bg-image d-flex pt-4 text-white">
   <div class="mx-auto d-flex flex-column align-items-center text-center">
-    <h1 class="position-relative mb-4"><i class="position-absolute -start-4 fa-solid fa-location-dot mx-3"></i><%= current_user.location.titleize %></h1>
+    <h1 class="position-relative mb-4"><i class="position-absolute -start-4 fa-solid fa-location-dot mx-3">
+    </i><%= current_user.location.titleize %></h1>
+
+    <%#= Simple form %>
+    <%= form_tag("/", :method => "get") do %>
+      <%= text_field_tag(:location) %>
+      <%= submit_tag("Search") %>
+    <% end %>
+
     <i class="wi <%= weather_icon(@weather[:weathercode]) %> fs-1 border border-4 border-white rounded-circle p-4 m-4"></i>
+
     <h2><%= weather_description(@weather[:weathercode]) %></h2>
     <dl class="mt-5 fs-4">
       <dt>Wind</dt>
-      <dd><%= @weather[:windspeed] %>km/h</dd>
+      <dd><%= @weather[:windspeed] %> km/h</dd>
       <dt>Temperature</dt>
-      <dd><%= @weather[:temp] %>°c</dd>
+      <dd><%= @weather[:temp] %> °C</dd>
       <dt>Rainfall</dt>
-      <dd><%= @weather[:precipitation] %>mm</dd>
+      <dd><%= @weather[:precipitation] %> mm</dd>
     </dl>
   </div>
 </div>
