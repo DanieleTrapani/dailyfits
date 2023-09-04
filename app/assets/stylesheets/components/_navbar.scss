@@ -1,21 +1,18 @@
 .navbar-lewagon {
   justify-content: space-around;
-  background: white;
+  background: transparent;
   height: 60px;
-}
-
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+  backdrop-filter: blur(8px);
 }
 
 .container-fluid a {
-  color: black;
+  color: white;
 }
 
 .camera-btn {
-  background-color: black;
+  background-color: white;
   border-radius: 50%;
-  color: white;
+  color: rgb(2, 12, 40);
   height: 50px;
   width: 50px;
   display: flex;
