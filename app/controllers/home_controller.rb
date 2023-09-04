@@ -1,9 +1,10 @@
 class HomeController < ApplicationController
   def index
-    if defined?(params)
-      @location = params[:location]
-    else
+    new_loc = params[:location]
+    if new_loc.nil?
       @location = current_user.location
+    else
+      @location = new_loc
     end
     @weather = WeatherApi.get_day(0, @location)
   end
