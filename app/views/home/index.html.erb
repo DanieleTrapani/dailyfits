@@ -4,7 +4,7 @@
     </i><%= @location.titleize %></h1>
 
     <%#= Simple form %>
-    <%= form_tag("/", :method => "get") do %>
+    <%= form_tag("/", method: "get", class: 'bg-transparent border-0 border-bottom text-white') do %>
       <%= text_field_tag(:location) %>
       <%= submit_tag("Search") %>
     <% end %>
