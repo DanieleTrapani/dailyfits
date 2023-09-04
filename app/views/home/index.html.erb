@@ -10,15 +10,14 @@
     <% end %>
 
     <i class="wi <%= weather_icon(@weather[:weathercode]) %> fs-1 border border-4 border-white rounded-circle p-4 m-4"></i>
-
     <h2><%= weather_description(@weather[:weathercode]) %></h2>
     <dl class="mt-5 fs-4">
       <dt>Wind</dt>
-      <dd><%= @weather[:windspeed] %> km/h</dd>
+      <dd><%= @weather[:windspeed] %>km/h</dd>
       <dt>Temperature</dt>
-      <dd><%= @weather[:temp] %> °C</dd>
+      <dd><%= @weather[:temp] %>°c</dd>
       <dt>Rainfall</dt>
-      <dd><%= @weather[:precipitation] %> mm</dd>
+      <dd><%= @weather[:precipitation] %>mm</dd>
     </dl>
   </div>
 </div>
