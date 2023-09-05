@@ -1,6 +1,20 @@
 <div class="container bg-image d-flex pt-4 text-white">
   <div class="mx-auto d-flex flex-column align-items-center text-center">
-    <%= render partial: 'shared/search' %>
+    <h5 class="mb-4" data-controller="search">
+      <span class="" data-search-target="location">
+        <i class="fa-solid fa-location-dot mx-3"></i>
+        <%= @location.titleize %>
+        <i class="mx-2 fa-solid fa-magnifying-glass fa-xs" data-action="click->search#toggle"></i>
+      </span>
+      <%= form_tag("/", method: "get", class:"d-none", "data-search-target": "form" ) do %>
+        <div class="input-group mb-3">
+          <%= text_field_tag(:location, @location, class:"form-control bg-transparent text-white border-0 border-bottom") %>
+          <%= button_tag class: "btn btn-outlign-light" do %>
+            <i class="fa-solid fa-lg fa-magnifying-glass"></i>
+          <% end %>
+        </div>
+      <% end %>
+    </h5>
     <i class="wi <%= weather_icon(@weather[:weathercode]) %> fs-1 border border-4 border-white rounded-circle p-4 m-4"></i>
     <h2><%= weather_description(@weather[:weathercode]) %></h2>
     <dl class="mt-5 fs-4">
