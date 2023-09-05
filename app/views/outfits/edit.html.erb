@@ -9,3 +9,15 @@
     <%= f.submit "Update", class: 'btn light text-white mt-3' %>
   <% end %>
 </div>
+
+
+        <div class="container py-3">
+          <%= simple_form_for @outfit do |f| %>
+            <%#= f.input :photos,
+                    as: :file,
+                    input_html: {multiple: true, class: 'mb-3'} %>
+            <%= f.input :description,
+                    input_html: {class: 'bg-transparent border-0 border-bottom text-white'} %>
+            <%= f.submit "Update", class: 'btn light text-white sm-font mt-3' %>
+          <% end %>
+        </div>
