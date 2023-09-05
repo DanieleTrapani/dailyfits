@@ -32,9 +32,8 @@ class WeatherApi
     first_result = Geocoder.search(location).first
 
     # Validates there is a proper API response. Defaults to Amsterdam in case of improper response.
-    if first_result.nil?
-      first_result = Geocoder.search("Amsterdam").first
-    end
+    first_result = Geocoder.search("Amsterdam").first if first_result.nil?
+
     coordinates = first_result.coordinates
 
     # coordinates = [52.3676, 4.9041]
