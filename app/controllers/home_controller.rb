@@ -4,7 +4,7 @@ class HomeController < ApplicationController
     if new_loc.nil?
       @location = current_user.location
     else
-      @location = new_loc
+      @location = new_loc.titleize
     end
     current_user[:location] = @location
     current_user.save
