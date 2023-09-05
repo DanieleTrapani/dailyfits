@@ -15,6 +15,9 @@
       <%= f.input :last_name,
                 required: true,
                 input_html: { autocomplete: "last-name", class: 'bg-transparent border-0 border-bottom ', } %>
+      <%= f.input :location,
+                required: true,
+                input_html: { autocomplete: "location", class: 'bg-transparent border-0 border-bottom', }%>
       <%= f.input :password,
                 required: false,
                 input_html: { autocomplete: "new-password", class: 'bg-transparent border-0 border-bottom ', } %>
