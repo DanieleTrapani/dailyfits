@@ -6,11 +6,13 @@
         <%= @location.titleize %>
         <i class="mx-2 fa-solid fa-pencil" data-action="click->search#toggle"></i>
       </span>
-      <%= form_tag("/", method: "get", class:"position-relative d-none", "data-search-target": "form" ) do %>
+      <%= form_tag("/", method: "get", class:"position-relative d-none bg-transparent border-0 border-bottom text-white", "data-search-target": "form" ) do %>
         <i class="position-absolute -start-4 fa-solid fa-location-dot mx-3"></i>
         <div class="input-group mb-3">
-          <%= text_field_tag(:location, @location, class:"form-control bg-transparent text-white border-0 border-bottom") %>
-          <%= submit_tag("Search", class: "btn btn-outline-light") %>
+          <%= text_field_tag(:location, @location) %>
+          <%= button_tag class: 'bg-transparent border-0' do %>
+            <i class="fa-solid fa-lg fa-magnifying-glass" style="color: #ffffff;"></i>
+          <% end %>
         </div>
       <% end %>
     </h1>

@@ -1,13 +1,12 @@
 class HomeController < ApplicationController
   def index
-    new_loc = params[:location]
-    if new_loc.nil?
-      @location = current_user.location
-    else
-      @location = new_loc
+    @location = current_user.location
+    if params[:location].present?
+      @location = params[:location]
+      current_user.location = @location
+      current_user.save
     end
-    current_user[:location] = @location
-    current_user.save
+
     @weather = WeatherApi.get_day(0, @location)
   end
 
