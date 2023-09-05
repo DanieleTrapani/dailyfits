@@ -1,0 +1,16 @@
+    
+<h5 class="mb-4" data-controller="search">
+  <span class="" data-search-target="location">
+    <i class="fa-solid fa-location-dot mx-3"></i>
+    <%= @location.titleize %>
+    <i class="mx-2 fa-solid fa-magnifying-glass fa-xs" data-action="click->search#toggle"></i>
+  </span>
+  <%= form_tag("/", method: "get", class:"d-none", "data-search-target": "form" ) do %>
+    <div class="input-group mb-3">
+      <%= text_field_tag(:location, @location, class:"form-control bg-transparent text-white border-0 border-bottom") %>
+      <%= button_tag class: "btn btn-outlign-light" do %>
+        <i class="fa-solid fa-lg fa-magnifying-glass"></i>
+      <% end %>
+    </div>
+  <% end %>
+</h5>
