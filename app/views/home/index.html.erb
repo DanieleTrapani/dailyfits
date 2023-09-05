@@ -5,8 +5,10 @@
 
     <%#= Simple form %>
     <%= form_tag("/", method: "get", class: 'bg-transparent border-0 border-bottom text-white') do %>
-      <%= text_field_tag(:location) %>
-      <%= submit_tag("Search") %>
+      <%= text_field_tag(:location, value = nil, options = { placeholder: "Search location..." }) %>
+      <%= button_tag class: 'bg-transparent border-0' do %>
+        <i class="fa-solid fa-lg fa-magnifying-glass" style="color: #ffffff;"></i>
+        <% end %>
     <% end %>
 
     <i class="wi <%= weather_icon(@weather[:weathercode]) %> fs-1 border border-4 border-white rounded-circle p-4 m-4"></i>
