@@ -3,7 +3,7 @@ class HomeController < ApplicationController
     @location = current_user.location
     if params[:location].present?
       @location = params[:location]
-      current_user.location = @location
+      current_user.location = @location.titleize
       current_user.save
     end
 
