@@ -14,6 +14,7 @@ class OutfitsController < ApplicationController
   end
 
   def show
+    @page = params[:test]
     id = params[:id]
     @outfit = Outfit.find(id)
   end
@@ -55,9 +56,15 @@ class OutfitsController < ApplicationController
   end
 
   def destroy
+    # raise
+    page = params[:page]
     @outfit = Outfit.find(params[:id])
     @outfit.destroy
-    redirect_to dashboard_path, status: :see_other
+    if page == "dashboard"
+      redirect_to dashboard_path, status: :see_other
+    else
+      redirect_to outfits_path, status: :see_other
+    end
   end
 
   private

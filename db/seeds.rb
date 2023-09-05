@@ -10,7 +10,8 @@ user = User.create({
     last_name: "Adminson",
     email: 'admin@admin.com',
     :password => 'password',
-    :password_confirmation => 'password'
+    :password_confirmation => 'password',
+    location: "Amsterdam"
 })
 puts "Admin created."
 
