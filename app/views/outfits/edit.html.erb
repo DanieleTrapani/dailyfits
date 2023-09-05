@@ -1,5 +1,10 @@
 <div class="container py-3">
-  <h2 class="mb-3">Create a new Outfit</h2>
+  <div class="ps-2 mb-3">
+    <%= link_to :back do %>
+      <i class="fa-solid fa-xl fa-chevron-left" style="color: #ffffff;"></i>
+    <% end %>
+  </div>
+  <h2 class="mb-3">Modify Outfit</h2>
   <%= simple_form_for @outfit do |f| %>
     <%= f.input :photos,
             as: :file,
