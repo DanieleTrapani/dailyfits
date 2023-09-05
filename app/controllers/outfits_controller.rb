@@ -51,13 +51,13 @@ class OutfitsController < ApplicationController
   def update
     @outfit = Outfit.find(params[:id])
     @outfit.update(outfit_params)
-    redirect_to dashboard_path, status: :see_other
+    redirect_to outfit_path
   end
 
   def destroy
     @outfit = Outfit.find(params[:id])
     @outfit.destroy
-    redirect_to outfits_path, status: :see_other
+    redirect_to dashboard_path, status: :see_other
   end
 
   private
