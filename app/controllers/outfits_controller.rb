@@ -1,6 +1,6 @@
 class OutfitsController < ApplicationController
   def index
-    today = WeatherApi.get_day(0, 'Amsterdam')
+    today = WeatherApi.get_day(0, current_user.location)
     tag_params = WeatherApi.create_tag(today)
     tag = Tag.new(tag_params)
     if tag.valid?
@@ -29,7 +29,7 @@ class OutfitsController < ApplicationController
 
     # TODO: generate tag, if existing append outfit, if not create and append
 
-    today = WeatherApi.get_day(0, 'Amsterdam')
+    today = WeatherApi.get_day(0, current_user.location)
     tag_params = WeatherApi.create_tag(today)
     tag = Tag.new(tag_params)
     if tag.valid?

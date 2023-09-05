@@ -29,7 +29,13 @@ class WeatherApi
 
   def self.api_call(location)
     # Retrieves coordinates from location
-    coordinates = Geocoder.search(location).first.coordinates
+    first_result = Geocoder.search(location).first
+
+    # Validates there is a proper API response. Defaults to Amsterdam in case of improper response.
+    first_result = Geocoder.search("Amsterdam").first if first_result.nil?
+
+    coordinates = first_result.coordinates
+
     # coordinates = [52.3676, 4.9041]
     # Retrieves daily weather data from coordinates
     response = HTTParty.get("https://api.open-meteo.com/v1/forecast?latitude=#{coordinates[0]}&longitude=#{coordinates[1]}&daily=weathercode,apparent_temperature_max,apparent_temperature_min,precipitation_sum,windspeed_10m_max&timezone=Europe%2FBerlin")
