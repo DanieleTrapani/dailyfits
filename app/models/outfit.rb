@@ -4,6 +4,7 @@ class Outfit < ApplicationRecord
   belongs_to :tag
   belongs_to :user
   has_many_attached :photos, dependent: :destroy
+  validates :photos, presence: true
 
   validates :description, length: {
     maximum: 200,

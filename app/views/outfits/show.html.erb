@@ -1,8 +1,25 @@
-<div class="bg-image">
+<div data-controller="edit-outfits">
   <div class="container outfitShow" style="padding-left: 0px; padding-right: 0px; padding-top: 25px">
-    <%= link_to :back do %>
-      <i class="fa-solid fa-xl fa-chevron-left"></i>
-    <% end %>
+    <div class="d-flex justify-content-between" id="fixedDiv">
+      <div class="ps-2">
+        <%= link_to :back do %>
+          <i class="fa-solid fa-xl fa-chevron-left" style="color: #ffffff;"></i>
+        <% end %>
+      </div>
+      <div class="d-flex justify-content-between">
+        <div class="me-4 d-flex d-none" data-edit-outfits-target="buttonlists">
+          <div class="me-4">
+            <%= link_to "delete", outfit_path(@outfit, page: @page), class:"btn light text-white sm-font", data: {turbo_method: :delete,turbo_confirm: "Are you sure?"} %>
+          </div>
+          <div class="" data-edit-outfits-target="editbutton" data-action="click->edit-outfits#edit">
+            <button class="btn light text-white sm-font">edit</button>
+          </div>
+        </div>
+        <div class="pe-4" data-edit-outfits-target="togglebutton" data-action="click->edit-outfits#toggle">
+          <i class="fas fa-ellipsis-h fa-xl mb-0" style="color: #ffffff;"></i>
+        </div>
+      </div>
+    </div>
     <div id="outfitCarousel" class="carousel slide bg-white" data-ride="carousel">
       <div class="carousel-inner">
         <% @outfit.photos.each_with_index do |photo, index| %>
@@ -21,12 +38,23 @@
       </button>
     </div>
     <div id="tag-display"  class="d-flex justify-content-between" style="padding-left: 10px; padding-right: 10px; padding-top: 5px">
-      <h4 class="btn border light align-text-center sm-font"><%= @outfit.tag.temperature %></h4>
-      <h4 class="btn border light align-text-center sm-font"><%= @outfit.tag.wind %> wind</h4>
-      <h4 class="btn border light align-text-center sm-font"><%= @outfit.tag.rain %> rain</h4>
+      <h4 class="btn border light text-white align-text-center sm-font"><%= @outfit.tag.temperature %></h4>
+      <h4 class="btn border light text-white align-text-center sm-font"><%= @outfit.tag.wind %> wind</h4>
+      <h4 class="btn border light text-white align-text-center sm-font"><%= @outfit.tag.rain %> rain</h4>
     </div>
     <div id="details" class="text-justify" style="padding-left: 20px">
-      <p> <%= @outfit.description %> </p>
+      <p class="ps-1" data-edit-outfits-target="text"><small><%= @outfit.description %></small></p>
+      <%= simple_form_for @outfit , html: {class: "d-none", data:{ edit_outfits_target: "form"}} do |f| %>
+        <%= f.input :description, label: false,
+                input_html: {class: 'ps-1 bg-transparent border-0 border-bottom text-white mb-0', style: 'height: 30px;'} %>
+        <%= f.submit "update", class: 'ps-1 btn light text-white sm-font mb-0',
+        style: "padding-top: 1px;
+            padding-bottom: 1px;
+            padding-left: 0px;
+            padding-right: 4px;" %>
+      <% end %>
     </div>
   </div>
 </div>
+
+ <%# margin-bottom: 5px; %>

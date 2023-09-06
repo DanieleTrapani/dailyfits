@@ -4,3 +4,8 @@
   background-size: cover;
   padding-top: 400px;
 }
+
+#fixedDiv {
+  height: 33px; /* Set your desired height */
+  overflow: auto; /* Add scrollbars if content overflows */
+}
