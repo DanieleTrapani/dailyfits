@@ -3,7 +3,19 @@
   color: rgb(189, 189, 189);
 }
 
-.devise input {
+input {
+  box-shadow: none !important;
+  caret-color: white;
+  color: white;
+  &:active {
+    outline-style: none;
+  }
+  &:focus {
+    color: white;
+  }
+}
+
+textarea {
   box-shadow: none !important;
   caret-color: white;
   color: white;
