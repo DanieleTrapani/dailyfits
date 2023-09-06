@@ -17,6 +17,7 @@ class OutfitsController < ApplicationController
     @page = params[:test]
     id = params[:id]
     @outfit = Outfit.find(id)
+    @default_desc = "No description given yet..."
   end
 
   def new
