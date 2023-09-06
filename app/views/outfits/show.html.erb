@@ -43,14 +43,18 @@
       <h4 class="btn border light text-white align-text-center sm-font"><%= @outfit.tag.rain %> rain</h4>
     </div>
     <div id="details" class="text-justify" style="padding-left: 20px">
-      <p data-edit-outfits-target="text"><small><%= @outfit.description %></small></p>
+      <p class="ps-1" data-edit-outfits-target="text"><small><%= @outfit.description %></small></p>
       <%= simple_form_for @outfit , html: {class: "d-none", data:{ edit_outfits_target: "form"}} do |f| %>
         <%= f.input :description, label: false,
-                input_html: {class: 'ps-0 bg-transparent border-0 border-bottom text-white mb-0', style: 'height: 30px;'} %>
-        <%= f.submit "Update", class: 'ps-0 btn btn-small text-white sm-font mb-0 bg-transparent border-0 border-bottom' %>
+                input_html: {class: 'ps-1 bg-transparent border-0 border-bottom text-white mb-0', style: 'height: 30px;'} %>
+        <%= f.submit "update", class: 'ps-1 btn light text-white sm-font mb-0',
+        style: "padding-top: 1px;
+            padding-bottom: 1px;
+            padding-left: 0px;
+            padding-right: 4px;" %>
       <% end %>
     </div>
   </div>
 </div>
 
-<%# style: 'height: 30px;' %>
+ <%# margin-bottom: 5px; %>
