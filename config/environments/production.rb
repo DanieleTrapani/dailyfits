@@ -91,5 +91,6 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-  config.hosts << "dailyfits-3a50615e93d9.herokuapp.com"
+#   config.hosts << "dailyfits-3a50615e93d9.herokuapp.com"
+  config.hosts.clear
 end
