@@ -96,5 +96,5 @@ Rails.application.configure do
   config.hosts << "www.dailyfits.me"
   config.hosts << "dailyfits.me"
 
-  config.action_controller.forgery_protection_origin_check = false
+#   config.action_controller.forgery_protection_origin_check = false
 end
