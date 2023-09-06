@@ -27,6 +27,30 @@ textarea {
   }
 }
 
+.devise input {
+  box-shadow: none !important;
+  caret-color: white;
+  color: white;
+  &:active {
+    outline-style: none;
+  }
+  &:focus {
+    color: white;
+  }
+}
+
+.devise textarea {
+  box-shadow: none !important;
+  caret-color: white;
+  color: white;
+  &:active {
+    outline-style: none;
+  }
+  &:focus {
+    color: white;
+  }
+}
+
 label {
   color: rgb(170, 170, 170);
 }
