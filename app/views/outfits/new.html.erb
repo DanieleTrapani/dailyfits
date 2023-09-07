@@ -3,7 +3,8 @@
   <%= simple_form_for @outfit do |f| %>
     <%= f.input :photos,
             as: :file,
-            input_html: {multiple: true, class: 'mb-3'} %>
+            input_html: {multiple: true, class: 'mb-3 d-none'},
+            label_html: {class: 'btn light sm-font mt-3' }, label: 'Choose photos' %>
     <%= f.input :description,
             input_html: {class: 'bg-transparent border-0 border-bottom text-white'} %>
     <%= f.submit "Upload", class: 'btn light text-white mt-3' %>
