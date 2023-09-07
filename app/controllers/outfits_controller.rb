@@ -9,7 +9,7 @@ class OutfitsController < ApplicationController
       tag = Tag.where(tag_params).first
     end
 
-    @outfits = Outfit.where(tag_id: tag.id).order(created_at: :desc)
+    @outfits = current_user.outfits.where(tag_id: tag.id).order(created_at: :desc)
     @weather = WeatherApi.get_day(0, current_user.location)
   end
 
