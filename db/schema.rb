@@ -42,12 +42,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_04_135902) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
-  create_table "locations", force: :cascade do |t|
-    t.string "location"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "outfits", force: :cascade do |t|
     t.text "description"
     t.bigint "user_id"
