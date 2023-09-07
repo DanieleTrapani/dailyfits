@@ -1,19 +1,18 @@
 <div class="d-flex justify-content-around">
-  <div class="pt-3 mt-3">
+  <div class="pt-3 mt-3 ms-2">
     <%= image_tag "daniele.jpg", class:"avatar-large" %>
   </div>
-  <div class="d-flex flex-column mb-2">
-    <h3 class="mb-3 my-0 ps-3 pt-4"><%= current_user.first_name %></h3>
-    <%# <p class="btn light text-white">Edit Profile</p> %>
-    <%= link_to "Edit Profile", edit_user_registration_path, class:"btn light text-white mb-3" %>
-    <%= link_to "Logout", destroy_user_session_path, class:"btn light text-white", data: {turbo_method: :delete} %>
+  <div class="d-flex flex-column mt-2 mb-2 me-3">
+    <p class="mb-2 my-0 ps-3 pt-4"><%= current_user.first_name %></p>
+    <%= link_to "Edit Profile", edit_user_registration_path, class:"btn light text-white mb-2 pt-1 pb-1 sm-font" %>
+    <%= link_to "Logout", destroy_user_session_path, class:"btn light text-white mb-2 pt-1 pb-1 sm-font", data: {turbo_method: :delete} %>
   </div>
 </div>
 <div class="d-flex mt-4 mb-0 ps-4">
   <div class="my-0 py-0 pb-0 pe-4">
     <i class="fa-solid fa-gear fa-lg" style="color: #ffffff;"></i>
   </div>
-  <h3 class="my-0">My Outfits</h3>
+  <p class="my-0">My Outfits</p>
 </div>
 <hr class="mt-1">
 <div class="mt-2">

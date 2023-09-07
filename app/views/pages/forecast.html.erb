@@ -7,13 +7,13 @@
     <div class="mt-5 fs-4">
       <% (2..6).each do |i| %>
         <div class="row py-1 mb-3">
-          <div class="col-4 justify-content-start">
+          <div class="col-4 justify-content-start" style="padding-left: 0px;margin-left: 0px;">
             <%= @forecast[:days][i].to_date.strftime("%a") %>
           </div>
           <div class="col-3">
-            <i class="wi <%= weather_icon(@forecast[:weathercode][i]) %> fs-1"></i>
+            <i class="wi <%= weather_icon(@forecast[:weathercode][i]) %> fs-1 pe-5 ps-1"></i>
           </div>
-          <div class="col-5">
+          <div class="col-5" style="padding-left: 45px;padding-right: 0px;">
             <%= @forecast[:temp][i].round %> °C
           </div>
         </div>
