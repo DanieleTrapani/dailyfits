@@ -41,7 +41,7 @@
       <p class="ps-1 mt-2" data-edit-outfits-target="text"><small class="sm-font"><%= @outfit.description.present? ? @outfit.description : "No description given yet..."%></small></p>
       <%= simple_form_for @outfit , html: {class: "ps-0 d-none d-flex justify-content-between align-items-center sm-font", data:{ edit_outfits_target: "form"}} do |f| %>
         <%= f.input :description, label: false,
-                input_html: {class: 'ps-0 bg-transparent border-0 border-bottom text-white mb-0  sm-font', style: 'padding-left: 0px; height: 30px;'} %>
+                input_html: {class: 'ps-0 bg-transparent border-0 border-bottom text-white mb-0 sm-font', style: 'padding-left: 0px; height: 30px;'} %>
         <%= f.submit "update", class: 'ps-1 btn light text-white sm-font mb-0 me-5',
         style: "padding-top: 5px;
             padding-bottom: 5px;
