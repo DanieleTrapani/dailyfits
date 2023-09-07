@@ -11,6 +11,6 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    @outfits = current_user.outfits
+    @outfits = current_user.outfits.order(created_at: :desc)
   end
 end
