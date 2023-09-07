@@ -1,7 +1,9 @@
-<div class="container-fluid">
+<div class="container-fluid" data-controller="landing">
     <div class="text-center pt-3 mt-2 pb-3"><h1>Dailyfits</h1></div>
     <div>
-      <%= image_tag("landingimage1.jpg", width: "100%", height: "400")%>
+      <%= image_tag "landingimage1.jpg",
+         data: { landing_target: "image" },
+         width: "100%", height: "400"%>
     </div>
     <div class="text-center mb-4 mt-0">
       <p class="m-0">What to wear?</p>
