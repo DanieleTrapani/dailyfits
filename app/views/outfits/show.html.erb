@@ -39,14 +39,14 @@
     </div>
     <div id="details" class="text-justify pt-1" style="padding-left: 20px">
       <p class="ps-1 mt-2" data-edit-outfits-target="text"><small class="sm-font"><%= @outfit.description.present? ? @outfit.description : "No description given yet..."%></small></p>
-      <%= simple_form_for @outfit , html: {class: "d-none", data:{ edit_outfits_target: "form"}} do |f| %>
+      <%= simple_form_for @outfit , html: {class: "d-none d-flex justify-content-around align-items-center", data:{ edit_outfits_target: "form"}} do |f| %>
         <%= f.input :description, label: false,
                 input_html: {class: 'ps-1 bg-transparent border-0 border-bottom text-white mb-0', style: 'height: 30px;'} %>
         <%= f.submit "update", class: 'ps-1 btn light text-white sm-font mb-0',
-        style: "padding-top: 1px;
-            padding-bottom: 1px;
-            padding-left: 0px;
-            padding-right: 4px;" %>
+        style: "padding-top: 5px;
+            padding-bottom: 5px;
+            padding-left: 5px;
+            padding-right: 5px;" %>
       <% end %>
     </div>
     <div id="tag-display"  class="d-flex justify-content-between" style="padding-left: 10px; padding-right: 10px; padding-top: 5px">
