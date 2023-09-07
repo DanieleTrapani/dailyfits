@@ -19,11 +19,11 @@
     <h2><%= weather_description(@weather[:weathercode]) %></h2>
     <dl class="mt-5 fs-4">
       <dt>Wind</dt>
-      <dd><%= @weather[:windspeed].round %> km/h</dd>
+      <dd class="mb-3 fs-5"><%= @weather[:windspeed].round %> km/h</dd>
       <dt>Avg. Temperature</dt>
-      <dd><%= @weather[:temp].round %> °C</dd>
+      <dd class="mb-3 fs-5"><%= @weather[:temp].round %> °C</dd>
       <dt>Rainfall</dt>
-      <dd><%= @weather[:precipitation].round %> mm</dd>
+      <dd class="fs-5"><%= @weather[:precipitation].round %> mm</dd>
     </dl>
   </div>
 </div>
