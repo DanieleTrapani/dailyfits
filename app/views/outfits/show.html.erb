@@ -37,8 +37,8 @@
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
     <div id="details" class="text-justify pt-1" style="padding-left: 20px">
       <p class="ps-1 mt-2" data-edit-outfits-target="text"><small class="sm-font"><%= @outfit.description.present? ? @outfit.description : "No description given yet..."%></small></p>
       <%= simple_form_for @outfit , html: {class: "ps-0 d-none d-flex justify-content-between align-items-center sm-font", data:{ edit_outfits_target: "form"}} do |f| %>
