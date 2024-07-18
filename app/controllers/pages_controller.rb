@@ -7,7 +7,10 @@ class PagesController < ApplicationController
 
   def forecast
     @location = current_user.location
-    @forecast = WeatherApi.forecast(@location)
+    # @forecast = WeatherApi.forecast(@location)
+    @forecast = Rails.cache.fetch("forecast", expires_in: 1.day) do
+      WeatherApi.forecast(@location)
+    end
   end
 
   def dashboard

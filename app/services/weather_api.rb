@@ -36,9 +36,10 @@ class WeatherApi
 
     coordinates = first_result.coordinates
 
-    # coordinates = [52.3676, 4.9041]
     # Retrieves daily weather data from coordinates
-    response = HTTParty.get("https://api.open-meteo.com/v1/forecast?latitude=#{coordinates[0]}&longitude=#{coordinates[1]}&daily=weathercode,apparent_temperature_max,apparent_temperature_min,precipitation_sum,windspeed_10m_max&timezone=Europe%2FBerlin")
+    response = HTTParty.get(
+      "https://api.open-meteo.com/v1/forecast?latitude=#{coordinates[0]}&longitude=#{coordinates[1]}&daily=weathercode,apparent_temperature_max,apparent_temperature_min,precipitation_sum,windspeed_10m_max&timezone=Europe%2FBerlin"
+    )
 
     return response["daily"]
   end
@@ -67,9 +68,9 @@ class WeatherApi
 
   def self.create_tag(day)
     {
-      temperature: tag_names[:temp].keys.select { |key| tag_names[:temp][key].include? day[:temp] }[0],
-      rain: tag_names[:rain].keys.select { |key| tag_names[:rain][key].include? day[:precipitation] }[0],
-      wind: tag_names[:wind].keys.select { |key| tag_names[:wind][key].include? day[:windspeed] }[0]
+      temperature: tag_names[:temp].keys.select { |key| tag_names[:temp][key].include?(day[:temp]) }[0],
+      rain: tag_names[:rain].keys.select { |key| tag_names[:rain][key].include?(day[:precipitation]) }[0],
+      wind: tag_names[:wind].keys.select { |key| tag_names[:wind][key].include?(day[:windspeed]) }[0]
     }
   end
 

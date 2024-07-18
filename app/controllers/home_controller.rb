@@ -7,7 +7,9 @@ class HomeController < ApplicationController
       current_user.save
     end
 
-    @weather = WeatherApi.get_day(0, @location)
+    @weather = Rails.cache.fetch("today", expires_in: 1.day) do
+      WeatherApi.get_day(0, @location)
+    end
   end
 
   private

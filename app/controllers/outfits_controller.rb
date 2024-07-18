@@ -57,7 +57,10 @@ class OutfitsController < ApplicationController
   end
 
   def generate_tag
-    today = WeatherApi.get_day(0, current_user.location)
+    today = Rails.cache.fetch("today", expires_in: 1.day) do
+      WeatherApi.get_day(0, current_user.location)
+    end
+
     tag_params = WeatherApi.create_tag(today)
     tag = Tag.new(tag_params)
     if tag.valid?
