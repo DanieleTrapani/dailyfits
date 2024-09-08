@@ -5,13 +5,13 @@ puts("DB clear.")
 # Create a new user
 
 puts("Creating Admin User..")
-user = User.create(
+user = User.create!(
   {
     :first_name => "Daniele",
     :last_name => "Trapani",
     :email => "daniele@email.com",
-    :password => "dailyfits1314",
-    :password_confirmation => "dailyfits1314",
+    :password => "123456",
+    :password_confirmation => "123456",
     :location => "Amsterdam"
   }
 )
